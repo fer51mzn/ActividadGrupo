@@ -25,18 +25,7 @@ public class DAOFactory {
 
     public DAOEmpresas getDaoEmpresas() {
         if(daoEmpresas == null){
-            daoEmpresas = new DAOEmpresasSerializable() {
-                @Override
-                public void save() {
-
-                }
-
-                @Override
-                public Object read() {
-
-                    return null;
-                }
-            };
+            daoEmpresas = new DAOEmpresasSerializable();
         }
         return daoEmpresas;
     }
@@ -44,16 +33,6 @@ public class DAOFactory {
     public DAOTrabajadores getDaoTrabajadores() {
         if( daoTrabajadores == null){
             daoTrabajadores = new DAOTrabajadoresSerializable() {
-                @Override
-                public void save() {
-
-                }
-
-                @Override
-                public Object read() {
-
-                    return null;
-                }
             };
         }
         return daoTrabajadores;

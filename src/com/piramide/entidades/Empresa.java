@@ -1,6 +1,8 @@
 package com.piramide.entidades;
 
-public class Empresa {
+import java.io.Serializable;
+
+public class Empresa implements Serializable {
     private String cif;
     private String nombre;
 

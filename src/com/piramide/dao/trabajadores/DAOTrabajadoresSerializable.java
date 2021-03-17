@@ -6,7 +6,7 @@ import com.piramide.entidades.Trabajador;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class DAOTrabajadoresSerializable extends DAOSerializable implements DAOTrabajadores {
+public class DAOTrabajadoresSerializable extends DAOSerializable implements DAOTrabajadores {
 
     List<Trabajador> trabajadores;
 
@@ -25,7 +25,7 @@ public abstract class DAOTrabajadoresSerializable extends DAOSerializable implem
     }
 
     @Override
-    public List<Trabajador> get() {
+    public List<Trabajador> getAll() {
         return trabajadores;
     }
 
@@ -36,20 +36,12 @@ public abstract class DAOTrabajadoresSerializable extends DAOSerializable implem
             Trabajador actual= trabajadores.get(i);
             if (actual.getDni().equals(trabajador)){
                 trabajadoresBusqueda.add(actual);
-                this.save();
+                this.save(this.trabajadores);
                 this.read();
             }
         }
         return trabajadoresBusqueda;
     }
 
-    @Override
-    public void save() {
 
-    }
-
-    @Override
-    public Object read() {
-        return null;
-    }
 }

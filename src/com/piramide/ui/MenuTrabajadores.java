@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class MenuTrabajadores {
 
     public static void principal(){
-        System.out.print("1) Añadir\n2) Muestra\n3) Guarda\n4) Lee\nOpción: ");
+        System.out.print("1) Añadir\n2) Muestra\nOpción: ");
         Scanner scanner = new Scanner(System.in);
         String eleccion = scanner.nextLine();
         if (eleccion.equals("1")) {
@@ -17,12 +17,6 @@ public class MenuTrabajadores {
         }
         else if(eleccion.equals("2")){
             muestra();
-        }
-        else if(eleccion.equals("3")){
-            DAOFactory.getInstance().getDaoTrabajadores().save();
-        }
-        else if(eleccion.equals("4")){
-            DAOFactory.getInstance().getDaoTrabajadores().read();
         }
     }
 
@@ -37,7 +31,7 @@ public class MenuTrabajadores {
     }
 
     public static void muestra(){
-        List<Trabajador> trabajadores = DAOFactory.getInstance().getDaoTrabajadores().get();
+        List<Trabajador> trabajadores = DAOFactory.getInstance().getDaoTrabajadores().getAll();
         for (int i = 0; i < trabajadores.size(); i++) {
             Trabajador trabajador = trabajadores.get(i);
             System.out.println(" -"+i+" "+trabajador.getDni());

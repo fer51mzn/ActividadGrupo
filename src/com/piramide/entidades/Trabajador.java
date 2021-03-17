@@ -1,6 +1,8 @@
 package com.piramide.entidades;
 
-public class Trabajador {
+import java.io.Serializable;
+
+public class Trabajador implements Serializable {
 
     private Titulacion titulacion;
     private String dni;

@@ -6,7 +6,7 @@ import com.piramide.entidades.Empresa;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class DAOEmpresasSerializable extends DAOSerializable implements DAOEmpresas {
+public class DAOEmpresasSerializable extends DAOSerializable implements DAOEmpresas {
 
     List<Empresa> empresas;
 
@@ -39,16 +39,6 @@ public abstract class DAOEmpresasSerializable extends DAOSerializable implements
             }
         }
         return empresasBusqueda;
-    }
-
-    @Override
-    public void save() {
-
-    }
-
-    @Override
-    public Object read() {
-        return null;
     }
 
 

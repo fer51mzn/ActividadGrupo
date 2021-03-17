@@ -3,6 +3,7 @@ package com.piramide.dao.ofertas;
 import com.piramide.dao.DAOSerializable;
 import com.piramide.entidades.Empresa;
 import com.piramide.entidades.Oferta;
+import com.piramide.entidades.Trabajador;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,26 @@ public class DAOOfertasSerializable extends DAOSerializable implements DAOOferta
             }
         }
         return ofertasBusqueda;
+    }
+
+    @Override
+    public void add(Oferta oferta, Empresa empresa) {
+        oferta.setEmpresa(empresa);
+        ofertas.add(oferta); //solo si no existe la oferta, si existe habría que buscarla
+        save(ofertas);
+    }
+
+    @Override
+    public void add(Oferta oferta, Trabajador trabajador) {
+        oferta.add(trabajador);
+        ofertas.add(oferta); //solo si no existe la oferta, si existe habría que buscarla
+        save(ofertas);
+    }
+
+    @Override
+    public List<Trabajador> getTrabajadores(Oferta oferta) {
+        //habría que buscar la oferta en la lista
+        return oferta.getTrabajadores();
     }
 
 }

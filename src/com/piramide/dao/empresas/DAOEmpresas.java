@@ -8,7 +8,4 @@ public interface DAOEmpresas {
     public void add(Empresa empresa);
     public List<Empresa> getAll();
     public List<Empresa> getEmpresa(Empresa empresa);
-
-    void save();
-    Object read();
 }
