@@ -2,14 +2,27 @@ package com.piramide.dao;
 
 import java.io.*;
 
+/**
+ * Clase Serializable
+ */
 public abstract class DAOSerializable {
-
+    /**
+     * Fichero
+     */
     protected final String file;
 
+    /**
+     * Serializable
+     * @param file
+     */
     public DAOSerializable(String file){
         this.file = file;
     }
 
+    /**
+     * Con este metodo Guardamos
+     * @param obj
+     */
     protected void save(Object obj){
         try {
             FileOutputStream fos = new FileOutputStream(file);
@@ -22,6 +35,10 @@ public abstract class DAOSerializable {
         }
     }
 
+    /**
+     * Con este metodo leemos
+     * @return
+     */
     protected Object read(){
         Object obj = null;
         try {

@@ -6,8 +6,13 @@ import com.piramide.entidades.Trabajador;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Clase Menu Trabajadores
+ */
 public class MenuTrabajadores {
-
+    /**
+     * Menu Principal
+     */
     public static void principal(){
         System.out.print("1) Añadir\n2) Muestra\nOpción: ");
         Scanner scanner = new Scanner(System.in);
@@ -20,6 +25,10 @@ public class MenuTrabajadores {
         }
     }
 
+    /**
+     * Con este metodo añadimos el Trabajador
+     */
+
 
 
     private static void añadir() {
@@ -30,6 +39,9 @@ public class MenuTrabajadores {
         DAOFactory.getInstance().getDaoTrabajadores().add(trabajadorNuevo);
     }
 
+    /**
+     * Con este metodo añadimos la lista de Trabajadores
+     */
     public static void muestra(){
         List<Trabajador> trabajadores = DAOFactory.getInstance().getDaoTrabajadores().getAll();
         for (int i = 0; i < trabajadores.size(); i++) {

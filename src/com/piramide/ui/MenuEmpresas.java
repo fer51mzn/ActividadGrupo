@@ -7,7 +7,13 @@ import com.piramide.entidades.Trabajador;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Clase Menu Empresas
+ */
 public class MenuEmpresas {
+    /**
+     * Menu Principal
+     */
     public static void principal(){
         System.out.print("1) Añadir\n2) Muestra\nOpción: ");
         Scanner scanner = new Scanner(System.in);
@@ -21,7 +27,9 @@ public class MenuEmpresas {
     }
 
 
-
+    /**
+     * Con este metodo añadimos una empresa
+     */
     private static void añadir() {
         System.out.println("Introduce cif para la nueva empresa:");
         Scanner scanner = new Scanner(System.in);
@@ -30,6 +38,9 @@ public class MenuEmpresas {
         DAOFactory.getInstance().getDaoEmpresas().add(empresaNuevo);
     }
 
+    /**
+     * Con este metodo mostramos la Lista de empresas
+     */
     public static void muestra(){
         List<Empresa> empresas = DAOFactory.getInstance().getDaoEmpresas().getAll();
         for (int i = 0; i < empresas.size(); i++) {

@@ -2,9 +2,14 @@ package com.piramide.ui;
 
 import java.util.Scanner;
 
+/**
+ * Clase Menu
+ */
 public class Menu {
 
-
+    /**
+     * MenuPrincipal
+     */
     public static void principal(){
         Scanner scanner = new Scanner(System.in);
         while (true) {
